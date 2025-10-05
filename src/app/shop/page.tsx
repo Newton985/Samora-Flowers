@@ -54,7 +54,7 @@ function parseQuery(searchParams: {
 export default async function ShopPage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: any
 }) {
   const query = parseQuery(searchParams);
   const data = await fetchProducts(query);
