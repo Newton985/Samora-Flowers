@@ -16,13 +16,10 @@ import RelatedProducts from "@/components/product-details/RelatedProducts";
 import ProductFeatures from "@/components/product-details/ProductFeatures";
 import Newsletter from "@/components/product-details/Newsletter";
 
-interface ProductDetailsPageProps {
-  params: { slug: string };
-}
 
 export default async function ProductDetailsPage({
   params,
-}: ProductDetailsPageProps) {
+}: any) {
   const product = await fetchProductBySlug(params.slug);
 
   if (!product) {
