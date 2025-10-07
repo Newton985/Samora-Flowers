@@ -34,6 +34,7 @@ export function ProductGrid({ products }: ProductGridProps) {
             description={p.description}
             price={`$${p.price.toFixed(2)}`}
             isNew={p.isNew}
+            slug={p.slug}
           />
         </Grid>
       ))}

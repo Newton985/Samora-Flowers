@@ -1,5 +1,18 @@
 export type PriceCurrency = 'USD' | 'EUR' | 'GBP' | 'KES';
 
+export interface ProductSize {
+  id: string;
+  name: string;
+  priceAdjustment: number;
+  icon: string;
+}
+
+export interface ProductColor {
+  id: string;
+  name: string;
+  hex: string;
+}
+
 export interface Product {
   id: string;
   slug: string;
@@ -20,6 +33,16 @@ export interface Product {
   available?: boolean;
   createdAt: string; // ISO
   updatedAt: string; // ISO
+  // Additional fields for product details page
+  sizes?: ProductSize[];
+  colors?: ProductColor[];
+  sku?: string;
+  shareUrls?: {
+    facebook: string;
+    twitter: string;
+    instagram: string;
+    pinterest: string;
+  };
 }
 
 export interface ProductQuery {

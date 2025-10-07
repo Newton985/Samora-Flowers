@@ -24,8 +24,9 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
-import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/shoppingBagOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import { usePathname } from "next/navigation";
 
 // Brand mark with consistent sizing and token usage
 function BrandMark() {
@@ -36,7 +37,7 @@ function BrandMark() {
       alignItems="center"
       gap={0.75}
       component={NextLink}
-      href="/"
+      href="/home"
       sx={{ textDecoration: "none" }}
     >
       <Box
@@ -83,8 +84,8 @@ function BrandMark() {
 }
 
 const navItems: { label: string; href: string }[] = [
-  { label: "Home", href: "/" },
-  { label: "Shop", href: "/shop" },
+  { label: "Shop", href: "/" },
+  { label: "Home", href: "/home" },
   { label: "About Us", href: "/about" },
   { label: "Contact Us", href: "/contact" },
   { label: "Blogs", href: "/blogs" },
@@ -96,6 +97,7 @@ export default function AppBar() {
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (next: boolean) => () => setOpen(next);
+  const activePath = usePathname();
 
   return (
     <MuiAppBar
@@ -135,7 +137,7 @@ export default function AppBar() {
               alignItems="center"
             >
               {navItems.map((item) => {
-                const active = item.href === "/"; // placeholder active logic
+                const active = activePath === item.href; // placeholder active logic
                 return (
                   <Link
                     key={item.href}
