@@ -24,7 +24,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
-import ShoppingBagOutlinedIcon from "@mui/icons-material/shoppingBagOutlined";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { usePathname } from "next/navigation";
 

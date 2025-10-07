@@ -5,7 +5,7 @@ import NextLink from "next/link";
 import Image from "next/image";
 import { flowers } from "../../../dummy/flowers";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
-import ShoppingBagOutlinedIcon from "@mui/icons-material/shoppingBagOutlined";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import AddToCartDialog from "./AddToCartDialog";
 
 // Select a random flower image (stable per render if passed via ref) - simple approach

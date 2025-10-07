@@ -19,7 +19,7 @@ import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import RemoveRoundedIcon from "@mui/icons-material/RemoveRounded";
 import DeleteOutlineRoundedIcon from "@mui/icons-material/DeleteOutlineRounded";
-import ShoppingBagOutlinedIcon from "@mui/icons-material/shoppingBagOutlined";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import Image from "next/image";
 
 // Mock product variants data - in real app, this would come from props or API
