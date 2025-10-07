@@ -13,23 +13,30 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { PriceCurrency } from '@/types/product';
 import { currencyFormat } from '@/utils/currencyFormat';
+import AddToCartDialog from '@/components/app/AddToCartDialog';
 
 interface ProductActionsProps {
   productId: string;
   price: number;
   currency: PriceCurrency;
+  productName?: string;
+  productImage?: string;
 }
 
-export default function ProductActions({ productId, price, currency }: ProductActionsProps) {
+export default function ProductActions({ productId, price, currency, productName, productImage }: ProductActionsProps) {
   const [quantity, setQuantity] = useState(1);
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   const handleQuantityChange = (delta: number) => {
     setQuantity(prev => Math.max(1, prev + delta));
   };
 
   const handleAddToCart = () => {
-    // TODO: Implement add to cart functionality
-    console.log('Add to cart:', { productId, quantity });
+    setDialogOpen(true);
+  };
+
+  const handleCloseDialog = () => {
+    setDialogOpen(false);
   };
 
   const handleBuyNow = () => {
@@ -148,6 +155,13 @@ export default function ProductActions({ productId, price, currency }: ProductAc
           Buy Now
         </Button>
       </Stack>
+
+      <AddToCartDialog
+        open={dialogOpen}
+        onClose={handleCloseDialog}
+        productName={productName}
+        productImage={productImage}
+      />
     </Stack>
   );
 }

@@ -83,6 +83,8 @@ export default async function ProductDetailsPage({
                 productId={product.id}
                 price={product.price}
                 currency={product.currency}
+                productName={product.name}
+                productImage={product.image}
               />
             </Stack>
           </Box>
