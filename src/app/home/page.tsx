@@ -1,28 +1,19 @@
 "use client";
 import React from "react";
 import { Box, Container } from "@mui/material";
-import TopContactBar from "@/components/ui/TopContactBar";
 import StoreAppBar from "@/components/ui/AppBar";
 import Footer from "@/components/ui/Footer";
 import HeroSection from "@/components/app/HeroSection";
 import OccasionsGrid from "@/components/app/OccasionsGrid";
-import DualPromos from "@/components/app/DualPromos";
-import FeatureList from "@/components/app/FeatureList";
 import BestSellersSection from "@/components/app/BestSellersSection";
-import PromoBanner from "@/components/app/PromoBanner";
 import TestimonialsSection from "@/components/app/TestimonialsSection";
-import MetricsStrip from "@/components/app/MetricsStrip";
 import ProductCarousel from "@/components/app/ProductCarousel";
 import BlogSection from "@/components/app/BlogSection";
-import InstagramGallery from "@/components/app/InstagramGallery";
 import FAQAccordion from "@/components/app/FAQAccordion";
-import NewsletterSignup from "@/components/app/NewsletterSignup";
 
 export default function HomePage() {
   return (
     <main>
-      {/* Top bars */}
-      <TopContactBar />
       <StoreAppBar />
 
       <Box paddingX={{ xs: 0, md: 2, lg: 4 }}>
@@ -30,37 +21,19 @@ export default function HomePage() {
         <HeroSection />
 
         {/* Modular Occasions Grid */}
-        <Container
-          maxWidth="xl"
-          sx={{ pt: { xs: 7, md: 10 }, bgcolor: "background.default" }}
-        >
+        <Container maxWidth="xl" sx={{ pt: { xs: 1, md: 5 } }}>
           <OccasionsGrid />
         </Container>
 
         {/* Dual Promos Section */}
-        <Container maxWidth="xl">
+        {/* <Container maxWidth="xl">
           <DualPromos />
-        </Container>
+        </Container> */}
 
         {/* Feature Strip (Modular) */}
-        <Container maxWidth="xl">
+        {/* <Container maxWidth="xl">
           <FeatureList />
-        </Container>
-
-        {/* Best Sellers (Modular) */}
-        <Container maxWidth="xl">
-          <BestSellersSection />
-        </Container>
-
-        {/* Promo Banner (Modular) */}
-        <Container maxWidth="xl">
-          <PromoBanner />
-        </Container>
-
-        {/* Metrics / Stats Strip */}
-        <Container maxWidth="xl">
-          <MetricsStrip />
-        </Container>
+        </Container> */}
 
         {/* Weekly Deals Carousel */}
         <Container maxWidth="xl">
@@ -70,13 +43,20 @@ export default function HomePage() {
           />
         </Container>
 
-        {/* New Arrivals Carousel */}
+        {/* Best Sellers (Modular) */}
         <Container maxWidth="xl">
-          <ProductCarousel
-            title="New Arrivals"
-            subtitle="Latest curated bouquets"
-          />
+          <BestSellersSection />
         </Container>
+
+        {/* Promo Banner (Modular) */}
+        {/* <Container maxWidth="xl">
+          <PromoBanner />
+        </Container> */}
+
+        {/* Metrics / Stats Strip */}
+        {/* <Container maxWidth="xl">
+          <MetricsStrip />
+        </Container> */}
 
         {/* Testimonials (Modular) */}
         <Container maxWidth="xl">
@@ -84,14 +64,14 @@ export default function HomePage() {
         </Container>
 
         {/* Blog Section */}
-        <Container maxWidth="xl">
+        {/* <Container maxWidth="xl">
           <BlogSection />
-        </Container>
+        </Container> */}
 
         {/* Instagram Gallery */}
-        <Container maxWidth="xl">
+        {/* <Container maxWidth="xl">
           <InstagramGallery />
-        </Container>
+        </Container> */}
 
         {/* FAQ Section */}
         <Container maxWidth="xl">
@@ -99,9 +79,9 @@ export default function HomePage() {
         </Container>
 
         {/* Newsletter (Modular) */}
-        <Container maxWidth="xl">
+        {/* <Container maxWidth="xl">
           <NewsletterSignup />
-        </Container>
+        </Container> */}
       </Box>
 
       {/* Footer */}

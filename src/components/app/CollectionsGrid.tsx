@@ -124,7 +124,7 @@ export default function OccasionsGrid() {
         <Button
           LinkComponent={NextLink}
           href="/"
-          sx={{  textTransform: "none", fontSize: { xs: 12, md: 14 } }}
+          sx={{ textTransform: "none", fontSize: { xs: 12, md: 14 } }}
           endIcon={<ArrowRightAltIcon />}
         >
           View All

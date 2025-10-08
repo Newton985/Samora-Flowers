@@ -22,7 +22,7 @@ export interface ProductCardProps {
 }
 
 export default function ProductCard({
-  name = "Bouquet Name",
+  name = "Flower Name",
   description = "Fresh and fragrant seasonal flowers",
   price = "$39.00",
   isNew = true,
@@ -45,8 +45,7 @@ export default function ProductCard({
     <Stack
       spacing={1.2}
       sx={{
-        p: 0.5,
-        borderRadius: 1,
+        borderRadius: 0.5,
         bgcolor: "background.default",
         cursor: "pointer",
         transition:
@@ -77,8 +76,8 @@ export default function ProductCard({
               objectFit: "cover",
               width: "100%",
               height: "auto",
-              aspectRatio: "0.8 / 0.999", // Makes images shorter (4:3 aspect ratio)
-              borderRadius: 10,
+              aspectRatio: "1 / 0.999", // Makes images shorter (4:3 aspect ratio)
+              borderRadius: 5,
               transition: "transform .2s ease",
             }}
             sizes="(max-width: 600px) 50vw, (max-width: 1200px) 25vw, 20vv"
@@ -100,34 +99,33 @@ export default function ProductCard({
             )}
           </Stack>
         </Box>
-        <Typography fontWeight={600} fontSize={14}>
+        <Typography fontWeight={500} fontSize={14} marginX={1}>
           {name}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        {/* <Typography variant="body2" color="text.secondary">
           {description}
-        </Typography>
+        </Typography> */}
       </Link>
 
       <Stack
         direction="row"
         alignItems="center"
         justifyContent="space-between"
-        sx={{ pt: 0.5, px: 1 }}
+        sx={{ py: 0.5, px: 1 }}
       >
-        <Typography fontWeight={700} color="primary.main">
+        <Typography fontWeight={700} color="primary.main" fontSize={{ xs: 14, md: 18 }}>
           {price}
         </Typography>
         <Stack direction="row" spacing={1}>
           <Button
             size="small"
-            variant="contained"
+            variant="outlined"
             startIcon={<ShoppingBagOutlinedIcon />}
             onClick={handleAddToCart}
-            style={{
-              paddingBlock: 2,
+            sx={{
               fontWeight: 600,
-              fontSize: 16,
-              paddingInline: 10,
+              fontSize: { xs: 12, md: 14 },
+              padding: { xs: '4px 8px', md: '8px 16px' },
             }}
           >
             Add

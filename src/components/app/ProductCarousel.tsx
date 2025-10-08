@@ -27,7 +27,9 @@ export default function ProductCarousel({
   // Basic horizontally scrollable container for now; can be upgraded to embla/swiper later
   const list = products.length
     ? products
-    : Array.from({ length: 8 }).map((_, i) => ({ name: `Bouquet ${i + 1}` }));
+    : Array.from({ length: 8 }).map((_, i) => ({
+        name: `Flower name ${i + 1}`,
+      }));
 
   const scrollRef = React.useRef<HTMLDivElement | null>(null);
   const scrollBy = (dir: 1 | -1) => {
@@ -43,29 +45,24 @@ export default function ProductCarousel({
       component="section"
       role="region"
       aria-labelledby={headingId}
-      sx={{ py: { xs: 7, md: 10 } }}
+      sx={{ py: { xs: 3, md: 5 } }}
     >
       <Stack
-        direction={{ xs: "column", md: "row" }}
+        direction="row"
         spacing={2}
         alignItems={{ xs: "flex-start", md: "center" }}
         justifyContent="space-between"
-        sx={{ mb: 3 }}
+        sx={{ mb: 2 }}
       >
         <Box>
-          <Typography
-            id={headingId}
-            component="h2"
-            variant="h4"
-            fontWeight={800}
-          >
+          <Typography id={headingId} variant="h6" fontWeight={800}>
             {title}
           </Typography>
-          {subtitle && (
+          {/* {subtitle && (
             <Typography variant="body1" color="text.secondary">
               {subtitle}
             </Typography>
-          )}
+          )} */}
         </Box>
         <Stack direction="row" spacing={1} alignItems="center">
           {actionsSlot}
@@ -92,8 +89,8 @@ export default function ProductCarousel({
         sx={{
           display: "grid",
           gridAutoFlow: "column",
-          gridAutoColumns: { xs: "85%", sm: "45%", md: "24%" },
-          gap: 2,
+          gridAutoColumns: { xs: "51%", sm: "45%", md: "24%" },
+          gap: { xs: 0.5, sm: 2, md: 3 },
           overflowX: "auto",
           scrollSnapType: "x mandatory",
           pb: 1,
@@ -105,7 +102,7 @@ export default function ProductCarousel({
       >
         {list.map((p, i) => (
           <Box key={i} sx={{ minWidth: 0 }}>
-            <ProductCard {...p} />
+            <ProductCard {...p} slug={`floral-arrangement-${i + 1}`} />
           </Box>
         ))}
       </Box>

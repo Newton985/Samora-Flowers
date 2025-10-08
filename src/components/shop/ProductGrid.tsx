@@ -24,7 +24,7 @@ export function ProductGrid({ products }: ProductGridProps) {
   return (
     <Grid
       container
-      spacing={{ xs: 1, sm: 2, md: 2 }}
+      spacing={{ xs: 0.5, sm: 1, md: 2 }}
       columns={{ xs: 2, sm: 8, md: 12 }}
     >
       {products.map((p) => (
